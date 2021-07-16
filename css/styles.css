@@ -481,24 +481,25 @@ body {
 }
 .address-flex {
   display: flex;
+  align-items: baseline;
 }
 .icon-footer-conteiner {
   margin-left: 70px;
 }
 .join-footer {
-  font-weight: bold;
+  font-weight: 700;
   line-height: 16px;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--secondary-color-white);
   font-style: normal;
-  margin-bottom: 20px;
+  margin: 0 0 20px 0;
 }
 .footer-form {
   margin-left: 93px;
 }
 .footer-label {
-  margin: 10px 0 20px 0;
+  margin: 0 0 20px 0;
   display: block;
   font-weight: 700;
   font-size: 14px;
@@ -545,11 +546,12 @@ body {
   line-height: 1.87;
   letter-spacing: 0.06em;
   color: #ffffff;
+  border: transparent;
 }
 .footer-button:hover,
 .footer-button:focus {
   background-color: var(--button-first-accent);
-  outline: transparent;
+  outline: none;
 }
 .footer-icon-send {
   margin-left: 10px;
@@ -672,18 +674,18 @@ body {
   border-radius: 50%;
   cursor: pointer;
   padding: 5px;
-  animation: animateRotate 1500ms linear 3;
+  animation: animateRotate 1200ms linear 3;
 }
-
-.close-modal:active,
-.close-modal:hover {
+.close-modal:hover,
+.close-modal:focus {
   fill: var(--accent-color);
+  outline: none;
 }
 .is-hidden {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  animation: animateRotate 1000ms linear 1;
+  animation: animateRotate 800ms linear 1;
 }
 .form {
   padding: 40px;
@@ -714,10 +716,6 @@ body {
   padding-left: 42px;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.form-input:focus,
-.form-textarea:focus {
-  outline: none;
-}
 .form-input:hover,
 .form-input:focus,
 .form-textarea:hover,
@@ -726,8 +724,8 @@ body {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border: 1px solid #2196f3;
-  box-sizing: border-box;
   border-radius: 4px;
+  outline: none;
 }
 .form-text-name {
   display: block;
@@ -743,8 +741,7 @@ body {
   width: 200px;
   height: 50px;
   background: var(--accent-color);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
+
   font-weight: 700;
   font-size: 16px;
   line-height: 1.87;
@@ -757,7 +754,10 @@ body {
 .form-button:hover,
 .form-button:focus {
   background-color: var(--button-first-accent);
-  outline: none;
+  border-radius: 4px;
+  outline: auto;
+  border-color: var(--button-first-accent);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 .form-textarea {
   width: 100%;
@@ -792,7 +792,12 @@ body {
 .privacy-contract {
   color: #2196f3;
 }
-
+.privacy-contract:hover,
+.privacy-contract:focus {
+  outline: none;
+  color: var(--button-first-accent);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
 /* animation */
 @keyframes animateScale {
   0% {
@@ -833,4 +838,8 @@ body {
   background-image: url(../images/iconcheck.svg);
   background-size: cover;
   border: 0px;
+}
+.input-privacy:focus + .privacy::before,
+.input-privacy:hover + .privacy::before {
+  border-color: var(--accent-color);
 }
