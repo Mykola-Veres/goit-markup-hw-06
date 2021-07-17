@@ -547,6 +547,8 @@ body {
   letter-spacing: 0.06em;
   color: #ffffff;
   border: transparent;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-button:hover,
 .footer-button:focus {
@@ -674,7 +676,8 @@ body {
   border-radius: 50%;
   cursor: pointer;
   padding: 5px;
-  animation: animateRotate 1200ms linear 3;
+  animation: animateRotate 1000ms linear 3;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .close-modal:hover,
 .close-modal:focus {
@@ -685,7 +688,7 @@ body {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  animation: animateRotate 800ms linear 1;
+  animation: animateRotate 600ms linear 1;
 }
 .form {
   padding: 40px;
@@ -714,7 +717,8 @@ body {
   border-radius: 4px;
   cursor: pointer;
   padding-left: 42px;
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .form-input:hover,
 .form-input:focus,
@@ -741,7 +745,6 @@ body {
   width: 200px;
   height: 50px;
   background: var(--accent-color);
-
   font-weight: 700;
   font-size: 16px;
   line-height: 1.87;
@@ -749,7 +752,9 @@ body {
   color: #ffffff;
   cursor: pointer;
   border: transparent;
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .form-button:hover,
 .form-button:focus {
@@ -767,6 +772,8 @@ body {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   resize: none;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .form-textarea::placeholder {
   font-size: 14px;
@@ -783,7 +790,7 @@ body {
   top: 0;
   left: 12px;
   transform: translateY(50%);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .form-input:hover + .form-icon,
 .form-input:focus + .form-icon {
@@ -791,6 +798,8 @@ body {
 }
 .privacy-contract {
   color: #2196f3;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .privacy-contract:hover,
 .privacy-contract:focus {
@@ -832,12 +841,14 @@ body {
   cursor: pointer;
   margin-left: 12px;
   border-radius: 2px;
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .input-privacy:checked + .privacy::before {
   background-image: url(../images/iconcheck.svg);
   background-size: cover;
   border: 0px;
+  background-color: var(--accent-color);
 }
 .input-privacy:focus + .privacy::before,
 .input-privacy:hover + .privacy::before {
